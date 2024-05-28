@@ -1,0 +1,92 @@
+body {
+  background-color:var(--text-bg-color);
+  font-family: "PT Sans Caption", sans-serif;
+  min-height: 100vh;
+  color: var(--navy-blue);
+}
+
+:root {
+  --bg-highlight-color: #ff9f66;
+  --navy-blue: #002379;
+  --orange:#ff5f00;
+  --text-bg-color:#fffae6;
+}
+
+::selection {
+  background-color: var(--bg-highlight-color);
+  color: var(--navy-blue);
+}
+
+h1 {
+  font-family: "Pacifico", cursive;
+  font-weight: 500;
+  font-size: 50px;
+  line-height: 60px;
+  position: relative;
+}
+h1::after {
+  content: "";
+  width: 260px;
+  height: 35%;
+  background-color: var(--bg-highlight-color);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+  transition: all 1s;
+}
+
+h1:hover:after {
+  height: 70%;
+}
+
+.title {
+  border-bottom: 2px dotted var(--navy-blue);
+}
+
+h2 {
+  font-family: "Righteous", sans-serif;
+  font-size: 25px;
+  line-height: 30px;
+  background-image: linear-gradient(to right,var(--orange),var(--bg-highlight-color));
+  background-clip: text;
+  color: transparent !important;
+}
+
+.inputs {
+  font-family: "PT Sans Caption", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.form-control:focus {
+  border-color:var(--orange);
+  box-shadow: 0 0 0 0.25rem var(--bg-highlight-color);
+}
+
+.button {
+  border-bottom: 2px dotted var(--navy-blue);
+}
+
+.btn-navy {
+  background-color: var(--navy-blue);
+  color:var(--text-bg-color);
+  transition: all 0.5s;
+}
+.btn-navy:hover {
+  background-color: #476bc6;
+  color:var(--text-bg-color);
+
+}
+
+.btn-orange {
+  background-color:var(--orange);
+  color:var(--text-bg-color);
+  transition: all 0.5s;
+}
+.btn-orange:hover {
+  background-color:var(--bg-highlight-color);
+  color:var(--text-bg-color);
+
+}

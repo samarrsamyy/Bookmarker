@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <title>Bookmark</title>
+    <link rel="shortcut icon" href="bookmark-icon.webp" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="page">
+      <div class="container">
+        <div class="title mb-4 p-5 text-center">
+          <h1>Bookmarker</h1>
+        </div>
+
+        <div class="inputs px-3">
+          <h2 class="text-center mb-5">
+            <i class="fa-solid fa-bookmark"></i> Bookmark your favorite sites
+            <i class="fa-solid fa-bookmark"></i>
+          </h2>
+          <div class="name mb-4">
+            <label for="bookmark-name" class="form-label fw-semibold"
+              ><i class="fa-solid fa-book-bookmark pe-2"></i> Site Name</label
+            >
+            <input
+              oninput=" validationInput(this , 'errName')"
+              type="text"
+              class="form-control text-secondary"
+              id="bookmarkName"
+              placeholder="Bookmark Name"
+            />
+            <p
+              id="errName"
+              class="rounded-pill my-3 p-3 text-center text-white bg-danger d-none"
+            >
+              Invalid Name
+            </p>
+          </div>
+          <div class="url mb-4">
+            <p></p>
+            <label for="bookmark-url" class="form-label fw-semibold">
+              <i class="fa-solid fa-link pe-2"></i> Site URL</label
+            >
+            <input
+              oninput=" validationInput( this , 'errURL')"
+              type="url"
+              class="form-control text-secondary"
+              id="bookmarkURL"
+              placeholder="Website URL"
+            />
+            <p
+              id="errURL"
+              class="rounded-pill my-3 p-3 text-center text-white bg-danger d-none"
+            >
+              Invalid URL
+            </p>
+          </div>
+        </div>
+        <div class="button text-center pb-4">
+          <button onclick="addSite()" type="button" class="btn btn-orange px-5">
+            Submit
+          </button>
+        </div>
+
+        <!--! table -->
+        <table class="table text-center mt-4">
+          <thead>
+            <tr>
+              <th scope="col">Index</th>
+              <th scope="col">Website Name</th>
+              <th scope="col">Visit</th>
+              <th scope="col">Delete</th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
